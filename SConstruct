@@ -29,7 +29,7 @@ TOOL_BUNDLE(bundle_env)
 
 
 bundledir = "the_bundle.app"
-app = None
+app = "application"   # The output object?
 key = "foobar"
 info_plist = None
 typecode = 'APPL'
