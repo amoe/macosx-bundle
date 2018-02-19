@@ -26,7 +26,7 @@ def configure_qt():
 env = configure_qt()
 env.Program('application', source=['application.cc'])
 
-bundledir = "the_bundle"
+bundledir = "the_bundle.app"
 app = None
 key = None
 info_plist = None
