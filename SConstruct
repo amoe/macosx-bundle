@@ -14,7 +14,7 @@ def configure_qt():
     if maybe_pkg_config_path:
         env['ENV']['PKG_CONFIG_PATH'] = maybe_pkg_config_path
 
-    env.Append(CCFLAGS=['-fPIC'])
+    env.Append(CCFLAGS=['-fPIC', '-std=c++11'])
     env.EnableQt5Modules(['QtCore', 'QtWidgets', 'QtNetwork'])
 
     return env
