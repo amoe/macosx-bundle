@@ -17,8 +17,6 @@ def configure_qt():
 
     env.Append(CCFLAGS=['-fPIC', '-std=c++11'])
     env.EnableQt5Modules(['QtCore', 'QtWidgets', 'QtNetwork'])
-    
-    TOOL_BUNDLE(env)
 
 
     return env
@@ -26,10 +24,14 @@ def configure_qt():
 env = configure_qt()
 env.Program('application', source=['application.cc'])
 
+bundle_env = Environment()
+TOOL_BUNDLE(bundle_env)
+
+
 bundledir = "the_bundle.app"
 app = None
 key = "foobar"
 info_plist = None
 typecode = 'APPL'
 
-# env.MakeBundle(bundledir, app, key, info_plist, typecode=typecode)
+bundle_env.MakeBundle(bundledir, app, key, info_plist, typecode=typecode)
