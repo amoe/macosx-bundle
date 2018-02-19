@@ -32,4 +32,4 @@ key = "foobar"
 info_plist = None
 typecode = 'APPL'
 
-env.MakeBundle(bundledir, app, key, info_plist, typecode=typecode)
+# env.MakeBundle(bundledir, app, key, info_plist, typecode=typecode)
