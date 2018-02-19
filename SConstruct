@@ -31,7 +31,7 @@ TOOL_BUNDLE(bundle_env)
 bundledir = "the_bundle.app"
 app = "application"   # The output object?
 key = "foobar"
-info_plist = None
+info_plist = "info_plist.xml"
 typecode = 'APPL'
 
 bundle_env.MakeBundle(bundledir, app, key, info_plist, typecode=typecode)
