@@ -1,6 +1,7 @@
 # SConstruct
 
 import os
+from osxbundle import TOOL_BUNDLE
 
 def configure_qt():
     qt5_dir = os.environ.get('QT5_DIR', "/usr")
@@ -16,8 +17,18 @@ def configure_qt():
 
     env.Append(CCFLAGS=['-fPIC', '-std=c++11'])
     env.EnableQt5Modules(['QtCore', 'QtWidgets', 'QtNetwork'])
+    
+    TOOL_BUNDLE(env)
+
 
     return env
 
 env = configure_qt()
 env.Program('application', source=['application.cc'])
+
+bundledir = None
+app = None
+key = None
+info_plist = None
+
+env.MakeBundle(bundledir, app, key, info_plist)
