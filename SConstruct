@@ -30,5 +30,6 @@ bundledir = "the_bundle"
 app = None
 key = None
 info_plist = None
+typecode = 'APPL'
 
-env.MakeBundle(bundledir, app, key, info_plist)
+env.MakeBundle(bundledir, app, key, info_plist, typecode=typecode)
