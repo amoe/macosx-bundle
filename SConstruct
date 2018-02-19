@@ -4,6 +4,9 @@ import os
 
 qt5_dir = os.environ.get('QT5_DIR', "/usr")
 
+maybe_pkg_config_path = os.environ.get('PKG_CONFIG_PATH')
+if maybe_pkg_config_path:
+    env['ENV']['PKG_CONFIG_PATH'] = maybe_pkg_config_path
 
 env = Environment(
     tools=['default', 'qt5'],
