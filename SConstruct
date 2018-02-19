@@ -1,6 +1,9 @@
 # SConstruct
 
-qt5_dir = "/usr"
+import os
+
+qt5_dir = os.environ.get('QT5_DIR', "/usr")
+
 
 env = Environment(
     tools=['default', 'qt5'],
