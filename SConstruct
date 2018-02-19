@@ -28,7 +28,7 @@ env.Program('application', source=['application.cc'])
 
 bundledir = "the_bundle.app"
 app = None
-key = None
+key = "foobar"
 info_plist = None
 typecode = 'APPL'
 
